@@ -51,7 +51,7 @@ func (d *DatabusService) Send(ctx context.Context, in *proto.SendRequest) (
 	res, err := calculate(in.Prm1, in.Prm2, operation)
 	if err != nil {
 		log.Fatal("error")
-		return &proto.SendResponse{}, nil
+		return nil, err
 	}
 	return &proto.SendResponse{Result: res}, nil
 }
